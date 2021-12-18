@@ -1,6 +1,7 @@
 use std::str::FromStr;
 use std::env;
 
+// Greatest common divisor given two numbers
 fn gcd(mut n: u64, mut m: u64) -> u64 {
     assert!( n != 0 && m != 0);
     
@@ -15,7 +16,7 @@ fn gcd(mut n: u64, mut m: u64) -> u64 {
 
     n
 }
-
+            
 fn main() {
     let mut numbers = Vec::new();
 
