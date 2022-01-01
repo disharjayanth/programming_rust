@@ -22,11 +22,13 @@ fn main() {
     println!("******");
 
     let mut composers = Vec::new();
+
     println!(
         "Length and capacity of vec: {} {}",
         composers.len(),
         composers.capacity()
     );
+
     composers.push(Person {
         name: "Palestrina".to_string(),
         birth: 1525,
