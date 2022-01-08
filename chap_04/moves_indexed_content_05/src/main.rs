@@ -1,3 +1,9 @@
+#[derive(Debug)]
+struct Person {
+    name: Option<String>,
+    birth: i32,
+}
+
 fn main() {
     let mut v = Vec::new();
     for i in 101..106 {
@@ -24,4 +30,26 @@ fn main() {
     println!("third element: {}", third);
 
     println!("v vector: {:?}", &v);
+
+    let w = vec![
+        "liberté".to_string(),
+        "egalité".to_string(),
+        "fraternite".to_string(),
+    ];
+
+    for mut s in w {
+        s.push('!');
+        println!("{}", s);
+    }
+
+    let mut composers = Vec::new();
+    composers.push(Person {
+        name: Some("Palestrina".to_string()),
+        birth: 1525,
+    });
+
+    let first_name = composers[0].name.take();
+    println!("first name: {:?}", first_name);
+
+    println!("{:?}", composers);
 }
