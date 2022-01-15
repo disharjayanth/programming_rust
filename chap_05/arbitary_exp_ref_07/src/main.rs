@@ -4,7 +4,7 @@ fn factorial(n: usize) -> usize {
 
 fn main() {
     let r = &factorial(6);
-    print!("r: {}", r);
+    println!("r: {}", r);
 
     assert_eq!(*r, 720);
 
