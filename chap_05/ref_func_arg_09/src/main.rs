@@ -1,7 +1,11 @@
-static mut STASH: &i32;
+static mut STASH: &i32 = &10;
 
-fn f(p: &i32) {
-    STASH = p;
+fn f(p: &'static i32) {
+    unsafe {
+        STASH = p;
+    }
 }
 
-fn main() {}
+fn main() {
+    f(&120);
+}
