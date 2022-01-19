@@ -33,5 +33,7 @@ fn main() {
 
     assert_eq!(wave, [0.0, 1.0, 0.0, -1.0]);
 
-    extend(&mut wave, &wave);
+    // below code throws error since wave is both mutable and 
+    // immutable at the same time and also because of lifetime
+    // extend(&mut wave, &wave);
 }
