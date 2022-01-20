@@ -23,4 +23,10 @@ fn main() {
 
     // v.1;                // error: access through other paths still forbidden
     println!("r1: {}", r1);                    
+
+    let mut x = 42;         // non-const i32 variable
+    let p = &mut x;    // shared reference to i32
+    assert_eq!(*p, 42);         
+    // x += 1;                    // error: cannot assign to x because it is borrowed 
+    assert_eq!(*p, 42);        // if the above assignment ops is ignoreed this stmt is true
 }
