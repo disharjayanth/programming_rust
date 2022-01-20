@@ -4,6 +4,14 @@ fn extend(vec: &mut Vec<f64>, slice: &[f64]) {
     }
 }
 
+fn parse_abc(abc: &[f64]) {
+    let mut i = 0;
+    for a in abc {
+        i+=1;
+        println!("{}: {}", i, a);
+    }
+}
+
 fn main() {
     // below code throws error since v(vector) is moved to aside
     // and still getting borrowed at r[0]
@@ -41,4 +49,8 @@ fn main() {
     // to wave's elements, the elements and the vec itself are read-only. You can't borrow a mutable
     // reference to a read-only value thus violating SHARED ACESS IS READ ONLY ACCESS.
     // extend(&mut wave, &wave);
+
+    let abc = vec![1.1, 2.2, 3.3, 4.4];
+
+    parse_abc(&abc);
 }
