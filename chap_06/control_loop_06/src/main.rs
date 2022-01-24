@@ -39,4 +39,35 @@ fn main() {
     }
 
     println!("{:?}", input_lines);
+
+    // 'outerloop: for i in 1..5 {
+    //     println!("*Loop: {i}");
+    //     for j in 1..5 {
+    //         if i == 3 {
+    //             break 'outerloop;
+    //         }
+    //         println!("{j}");
+    //     }
+    // }
+
+    for i in 1..10 {
+        if i % 2 == 0 {
+            continue;
+        }
+        println!("{i}");
+    }
+
+    let mut i = 0;
+    let num = 'outerloop: loop {
+        i += 1;
+        println!("****Loop: {i}");
+        for j in 1..10 {
+            println!("{j}");
+            if i == 7 {
+                break 'outerloop i;
+            }
+        }
+    };
+
+    println!("Loop exited at: {num}");
 }
