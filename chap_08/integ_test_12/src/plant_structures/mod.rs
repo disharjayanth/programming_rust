@@ -18,7 +18,7 @@ pub struct Fern {
 }
 
 impl Fern {
-    pub fn new(_type: Ferntype) -> Fern {
+    pub fn new(_type: FernType) -> Fern {
         Fern {
             roots: vec![],
             stems: vec![stems::Stem { furled: true }],
@@ -34,15 +34,19 @@ impl Fern {
     }
 }
 
+/// Create and return a [`VascularPath`] which represents the path of
+/// nutrients from the given [`Root`][r] to the given [`Leaf`](leaves::Leaf).
+///
+/// [r]: roots::Root
+pub fn trace_path(leaf: &leaves::Leaf, root: &roots::Root) -> VascularPath {
+    VascularPath {
+        from: leaf.x,
+        to: root.x,
+    }
+}
+
 #[doc(alias = "route")]
 pub struct VascularPath {
     pub from: bool,
     pub to: bool,
-}
-
-pub fn trace_path(leaf: &leaves::Leaf, root: &roots::Root) -> VascularPath {
-    Vascular {
-        from: leaf.x,
-        to: root.x,
-    }
 }

@@ -1,3 +1,6 @@
+//! Simulate the growth of ferns, from the level of
+//! individual cells on up.
+
 pub mod plant_structures;
 pub mod simulation;
 pub mod spores;
