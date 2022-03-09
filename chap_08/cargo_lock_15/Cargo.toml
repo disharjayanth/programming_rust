@@ -4,9 +4,9 @@ version = "0.1.0"
 edition = "2021"
 authors = ["example@dubbyexample.com"]
 license = "MIT"
-homepage = "somerandomeexample.com"
-repository = "somerandomeexample.com"
-documentation = "somerandomeexample.com/doc"
+homepage = "https://somerandomeexample.com"
+repository = "https://somerandomeexample.com"
+documentation = "https://somerandomeexample.com/doc"
 description = """
 Example and testing to publish first crate on crate io
 """
