@@ -1,0 +1,17 @@
+[package]
+name = "cargo_lock_15"
+version = "0.1.0"
+edition = "2021"
+authors = ["example@dubbyexample.com"]
+license = "MIT"
+homepage = "somerandomeexample.com"
+repository = "somerandomeexample.com"
+documentation = "somerandomeexample.com/doc"
+description = """
+Example and testing to publish first crate on crate io
+"""
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = ">0.8.2"
