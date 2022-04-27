@@ -32,6 +32,13 @@ impl Queue {
     pub fn split(self) -> (Vec<char>, Vec<char>) {
         (self.older, self.younger)
     }
+
+    pub fn new() -> Queue {
+        Queue {
+            older: Vec::new(),
+            younger: Vec::new(),
+        }
+    }
 }
 
 fn main() {
@@ -58,4 +65,7 @@ fn main() {
 
     let (older, younger) = q.split();
     println!("{:?} {:?}", older, younger);
+
+    let mut bq = Box::new(Queue::new());
+    bq.push('*');
 }
