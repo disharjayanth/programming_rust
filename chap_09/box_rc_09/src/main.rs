@@ -68,4 +68,8 @@ fn main() {
 
     let mut bq = Box::new(Queue::new());
     bq.push('*');
+
+    let mut bq = Box::new(Queue::new());
+    bq.push('*');
+    println!("bq Box: {:?}", bq);
 }
