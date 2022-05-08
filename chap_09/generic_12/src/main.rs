@@ -6,7 +6,7 @@ pub struct Queue<T> {
 }
 
 impl<T> Queue<T> {
-    pub fn new() -> Queue<T> {
+    pub fn new() -> Self {
         Queue {
             older: Vec::new(),
             younger: Vec::new(),
@@ -40,5 +40,9 @@ impl<T> Queue<T> {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let mut q = Queue::<char>::new();
+    q.push('a');
+
+    let mut r = Queue::new();
+    r.push("b");
 }
