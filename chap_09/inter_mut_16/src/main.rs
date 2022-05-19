@@ -10,7 +10,10 @@
 //     motion: Accel
 // }
 
-use std::rc::Rc;
+use std::{
+    cell::{Cell, RefCell},
+    rc::Rc,
+};
 
 fn main() {
     let mut rc_examples = "Rc examples".to_string();
@@ -26,4 +29,17 @@ fn main() {
     println!("{}", rc_examples);
     println!("{}", rc_a);
     println!("{}", rc_b);
+
+    let a = Cell::new("example");
+
+    println!("{}", a.get());
+
+    a.set("example changes!");
+
+    println!("{}", a.get());
+
+    let b = RefCell::new("ref cell example");
+
+    let borrowed = b.borrow();
+    println!("{}", borrowed);
 }
