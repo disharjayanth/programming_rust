@@ -26,6 +26,23 @@ enum Shape {
     Cuboid { corner1: Point3d, corner2: Point3d },
 }
 
+#[derive(Debug)]
+enum DifferentialEquation {}
+
+#[derive(Debug)]
+enum EarlyModernistPoem {}
+
+#[derive(Debug)]
+enum RelationshipStatus {
+    Single,
+    InARelationShip,
+    ItsComplicated(Option<String>),
+    ItsExtremeComplicated {
+        car: DifferentialEquation,
+        cdr: EarlyModernistPoem,
+    },
+}
+
 fn main() {
     let four_score_and_seven_years = RoughTime::InThePast(TimeUnit::Years, 4 * 20 + 7);
 
@@ -40,4 +57,12 @@ fn main() {
     };
 
     println!("{:?}", unit_sphere);
+
+    let some_relation = RelationshipStatus::Single;
+    println!("{:?}", some_relation);
+
+    let some_relation1 = RelationshipStatus::ItsComplicated(Some("I dont know".to_string()));
+    let some_relation2 = RelationshipStatus::ItsComplicated(None);
+    println!("{:?}", some_relation1);
+    println!("{:?}", some_relation2);
 }
