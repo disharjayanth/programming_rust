@@ -7,6 +7,19 @@ enum TimeUnit {
     Years,
 }
 
+impl TimeUnit {
+    fn plural(self) -> &'static str {
+        match self {
+            TimeUnit::Seconds => "seconds",
+            TimeUnit::Minutes => "minutes",
+            TimeUnit::Hours => "hours",
+            TimeUnit::Days => "days",
+            TimeUnit::Months => "months",
+            TimeUnit::Years => "years",
+        }
+    }
+}
+
 enum RoughTime {
     InThePastTime(TimeUnit, u32),
     JustNow,
@@ -22,5 +35,15 @@ fn rough_time_to_english(rt: RoughTime) -> String {
 }
 
 fn main() {
-    println!("Hello, world!");
+    println!(
+        "{}",
+        rough_time_to_english(RoughTime::InTheFuture(TimeUnit::Days, 5))
+    );
+
+    println!(
+        "{}",
+        rough_time_to_english(RoughTime::InThePastTime(TimeUnit::Years, 4))
+    );
+
+    println!("{}", rough_time_to_english(RoughTime::JustNow));
 }
