@@ -33,6 +33,25 @@ fn bind_subpattern(n: i32) {
     }
 }
 
+fn enum_pattern(n: Option<String>) {
+    match n {
+        Some(val) => println!("value is some: {}", val),
+        None => println!("value is none."),
+    }
+}
+
+enum TupleEnum {
+    Name(i32, String),
+    RGB(i32, i32, i32),
+}
+
+fn tuple_pattern(n: TupleEnum) {
+    match n {
+        TupleEnum::Name(key, value) => println!("name and key is: {} {}", key, value),
+        TupleEnum::RGB(r, g, b) => println!("r {} g {} b {}", r, g, b),
+    }
+}
+
 fn main() {
     match_int(100);
     match_int(1001);
@@ -48,4 +67,10 @@ fn main() {
     bind_subpattern(102);
     bind_subpattern(200);
     bind_subpattern(1000);
+
+    enum_pattern(Some("Hello world!".to_string()));
+    enum_pattern(None);
+
+    tuple_pattern(TupleEnum::Name(1, "John".to_string()));
+    tuple_pattern(TupleEnum::RGB(21, 10, 44));
 }
