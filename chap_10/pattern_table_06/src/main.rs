@@ -52,6 +52,12 @@ fn tuple_pattern(n: TupleEnum) {
     }
 }
 
+struct Color {
+    r: i32,
+    g: i32,
+    b: i32,
+}
+
 fn main() {
     match_int(100);
     match_int(1001);
@@ -72,5 +78,29 @@ fn main() {
     enum_pattern(None);
 
     tuple_pattern(TupleEnum::Name(1, "John".to_string()));
-    tuple_pattern(TupleEnum::RGB(21, 10, 44));
+    tuple_pattern(TupleEnum::RGB(512, 900, 400));
+
+    let foo = [1, 2, 3, 4, 5, 6, 7];
+
+    match foo {
+        [a, b, c, d, e, f, g] => {
+            println!("{} {} {} {} {} {} {}", a, b, c, d, e, f, g)
+        }
+    }
+
+    let bar = Color {
+        r: 10,
+        g: 12,
+        b: 14,
+    };
+
+    match bar {
+        Color { r, g, b } => println!("{} {} {}", &r, &g, &b),
+    }
+
+    let a = &10;
+
+    match a {
+        &value => println!("{}", value),
+    }
 }
